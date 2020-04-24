@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="top">
+  <div class="container">
+    <h1>仮ロゴ</h1>
+  </div>
+</section>
+<section class="main">
+  <div class="disc">
+    <div class="container">
+      <h2>What is XXX?</h2>
+      <p>ARCS-@cosmeは@cosmeのカスタマーレビューを自動収集します</p>
+      <p>レビューの他、以下のデータを取得することが可能です</p>
+      <div class="icons">
+        <div class="text">
+          <span class="fas fa-user-circle icon"></span>
+          <h3>ユーザー名</h3>
+        </div>
+        <div class="text">
+          <span class="fas fa-star icon"></span>
+          <h3>評価</h3>
+        </div>
+        <div class="text">
+          <span class="fas fa-align-left icon"></span>
+          <h3>レビュー本文</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form"> 
+    <div class="container">
+      <h2>レビューを収集する商品ページ情報を入力してください</h2>
+      <p>*商品URLはwww.cosme.net/product/product_id/半角数字6or8桁/topです</p>
+      <div class="flash">
+        {% for message in get_flashed_messages() %}
+          {{ message }}
+        {% endfor %}
+      </div>
+      <form action="/input" method="post">
+        <dl>
+          <dt>商品URL</dt>
+          <dd><input type="text" name="item_url"></dd>
+          <dt>取得レビュー数</dt>
+          <dd><input type="text" name="input_count"></dd>
+          <p><input type="submit" value="解析START"/></p>
+        </dl>   
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
