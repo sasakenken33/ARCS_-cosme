@@ -16,6 +16,12 @@ body {
 
 section.top {
   height: 30vh;
+  text-align: center;
+}
+
+.logo {
+  margin-top: 10rem;
+  width: 30%;
 }
 
 section.main {
@@ -120,11 +126,11 @@ input[type="submit"]:hover {
 @media screen and (min-width:768px) {
 
   section.top {
-    height: 40vh;
+    height: 30vh;
   }
   
   section.main {
-    height: 60vh;
+    height: 70vh;
   }
 
   section.main {
@@ -152,11 +158,11 @@ input[type="submit"]:hover {
 @media screen and (min-width:990px){
 
   section.top {
-    height: 30vh;
+    height: 40vh;
   }
 
   section.main {
-    height: 70vh;
+    height: 60vh;
   }
   .disc {
     font-size: 1.8rem;
