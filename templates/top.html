@@ -31,18 +31,23 @@
     <div class="container">
       <h2>レビューを収集する商品ページ情報を入力してください</h2>
       <p>*商品URLはwww.cosme.net/product/product_id/半角数字6or8桁/topです</p>
-      <div class="flash">
-        {% for message in get_flashed_messages() %}
-          {{ message }}
-        {% endfor %}
-      </div>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}    
+      <div class="loader hidden"></div>
       <form action="/input" method="post">
         <dl>
           <dt>商品URL</dt>
           <dd><input type="text" name="item_url"></dd>
           <dt>取得レビュー数</dt>
           <dd><input type="text" name="input_count"></dd>
-          <p><input type="submit" value="解析START"/></p>
+          <p><input type="submit" value="解析START" id="btn"/></p>
         </dl>   
       </form>
     </div>

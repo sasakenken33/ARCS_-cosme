@@ -66,12 +66,15 @@ section.main {
   font-size: 1rem;
 }
 
-.flash {
-  text-align: center;
-  font-weight: bold;
-  padding: 0.5em 1em;
-  margin: 1em 0;
+li.alert {
   color: #ff7d6e;
+  background: #ffebe9;
+  list-style: none;
+}
+li.success {
+  color: #1abc9c;
+  background:honeydew;
+  list-style: none;
 }
 
 dt {
