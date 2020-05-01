@@ -50,6 +50,13 @@
           <p><input type="submit" value="解析START" id="btn"/></p>
         </dl>   
       </form>
+      {% if session["dlfile_name"] %}
+        <form action="/download" method="get">
+          <dl>
+            <p><input type="submit" value="ダウンロード"/></p>
+          </dl>   
+        </form>
+      {% endif %}
     </div>
   </div>
 </section>

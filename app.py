@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, render_template, flash, session
+from flask import Flask, request, redirect, url_for, render_template, flash, session, send_file
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 import requests
@@ -8,9 +8,11 @@ import re
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+XLSX_MIMETYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+
 @app.route("/", methods=["GET"])
 def top():
-    return render_template("top.html")
+  return render_template("top.html")
 
 @app.route("/input", methods=["GET","POST"])
 def input():
@@ -111,4 +113,10 @@ def fetch():
   for data in data_set:
     sheet.append(data)
   #商品名をファイル名にして保存＆ダウンロード
-  book.save("レビュー収集結果_{}.xlsx".format(item_name))
+  file_name = "レビュー収集結果_{}.xlsx".format(item_name)
+  book.save(file_name)
+  session["dlfile_name"] = file_name
+
+@app.route('/download', methods=['GET'])
+def download():
+  return send_file(session["dlfile_name"], as_attachment = True, attachment_filename = session["dlfile_name"], mimetype = XLSX_MIMETYPE)
