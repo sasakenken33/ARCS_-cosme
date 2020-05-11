@@ -38,6 +38,10 @@ section.main {
   font-size: 1.2rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 .icons {
   display: flex;
   margin-top: 5rem;
@@ -69,7 +73,7 @@ section.main {
   text-align: center;
   margin:0 auto;
   padding-top: 3rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 li.alert {
@@ -106,6 +110,7 @@ input[type='submit']{
   border: none;
   display: block;
   width: 15rem;
+  letter-spacing: 0.2rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: var(--accent-color);
@@ -165,13 +170,13 @@ input[type="submit"]:hover {
     height: 60vh;
   }
   .disc {
-    font-size: 1.8rem;
-    padding-top: 8rem;
+    font-size: 1.5rem;
+    padding-top: 6rem;
   }
 
   .form {
-    font-size: 1.8rem;
-    padding-top: 6rem;
+    font-size: 1.5rem;
+    padding-top: 2rem;
   }
 
   input[type='text']{

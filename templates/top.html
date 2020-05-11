@@ -9,7 +9,7 @@
   <div class="disc">
     <div class="container">
       <h2>What is XXX?</h2>
-      <p>ARCS-@cosmeは@cosmeのカスタマーレビューを自動収集します</p>
+      <p>ARCS-@cosmeは<a href="https://www.cosme.net/" target="blank">@cosme</a>のカスタマーレビューを自動収集します</p>
       <p>レビューの他、以下のデータを取得することが可能です</p>
       <div class="icons">
         <div class="text">
@@ -29,7 +29,7 @@
   </div>
   <div class="form"> 
     <div class="container">
-      <h2>レビューを収集する商品ページ情報を入力してください</h2>
+      <h2 class="loading">レビューを収集する商品ページ情報を入力してください</h2>
       <p>*商品URLはwww.cosme.net/product/product_id/半角数字6or8桁/topです</p>
       {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -39,8 +39,7 @@
           {% endfor %}
           </ul>
         {% endif %}
-      {% endwith %}    
-      <div class="loader hidden"></div>
+      {% endwith %}
       <form action="/input" method="post">
         <dl>
           <dt>商品URL</dt>
