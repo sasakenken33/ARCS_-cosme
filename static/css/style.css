@@ -38,6 +38,10 @@ section.main {
   font-size: 1.2rem;
 }
 
+.disc_logo {
+  width: 8rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -172,6 +176,10 @@ input[type="submit"]:hover {
   .disc {
     font-size: 1.5rem;
     padding-top: 6rem;
+  }
+
+  .disc_logo {
+    width: 10rem;
   }
 
   .form {
